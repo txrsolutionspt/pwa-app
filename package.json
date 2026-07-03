@@ -1,0 +1,16 @@
+{
+  "name": "hello-world-pwa",
+  "version": "1.0.0",
+  "description": "A simple hello world Progressive Web App",
+  "scripts": {
+    "start": "npx http-server -p 8000 -c-1",
+    "dev": "npx http-server -p 8000 -c-1 -o"
+  },
+  "keywords": [
+    "pwa",
+    "progressive-web-app",
+    "hello-world"
+  ],
+  "author": "",
+  "license": "MIT"
+}
