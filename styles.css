@@ -48,6 +48,15 @@ h1 {
   color: #2196F3;
   margin-bottom: 10px;
   font-weight: 700;
+  margin: 0;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  width: 100%;
 }
 
 p {
@@ -155,34 +164,23 @@ p {
   background: #d0d0d0;
 }
 
-.theme-toggle {
-  position: fixed;
-  top: max(20px, env(safe-area-inset-top));
-  right: max(20px, env(safe-area-inset-right));
-  z-index: 1000;
-}
-
-.theme-btn {
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px solid white;
-  color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 24px;
+.theme-btn-inline {
+  background: transparent;
+  border: none;
+  font-size: 28px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease;
+  padding: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.theme-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.1);
+.theme-btn-inline:hover {
+  transform: scale(1.15);
 }
 
-.theme-btn:active {
+.theme-btn-inline:active {
   transform: scale(0.95);
 }
 
@@ -240,6 +238,10 @@ body.dark-mode .btn-secondary {
 
 body.dark-mode .btn-secondary:hover {
   background: #3a3a4e;
+}
+
+body.dark-mode .theme-btn-inline {
+  color: #FFD700;
 }
 
 @media (max-width: 480px) {
