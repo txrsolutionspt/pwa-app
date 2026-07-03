@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2196F3">
+    <meta name="description" content="A simple hello world PWA">
+    <title>Hello World PWA</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%232196F3' width='192' height='192'/><text x='50%' y='50%' font-size='100' fill='white' text-anchor='middle' dominant-baseline='central' font-family='Arial'>H</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%232196F3' width='192' height='192'/><text x='50%' y='50%' font-size='100' fill='white' text-anchor='middle' dominant-baseline='central' font-family='Arial'>H</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Hello World! 👋</h1>
+            <p>Welcome to your PWA</p>
+            <p class="status" id="status">Loading...</p>
+            <button id="installBtn" class="btn" style="display: none;">Install App</button>
+            <div class="info">
+                <p><strong>This is a Progressive Web App!</strong></p>
+                <p>✅ Works offline</p>
+                <p>✅ Can be installed on your home screen</p>
+                <p>✅ Native-like experience</p>
+            </div>
+            <p class="timestamp" id="timestamp"></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
