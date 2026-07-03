@@ -105,3 +105,34 @@ document.getElementById('resetBtn').addEventListener('click', () => {
   saveCounter(counter);
   updateCounterDisplay(counter);
 });
+
+// Theme toggle functionality with localStorage persistence
+const THEME_KEY = 'pwa-theme';
+
+function loadTheme() {
+  const saved = localStorage.getItem(THEME_KEY);
+  return saved || 'light';
+}
+
+function saveTheme(theme) {
+  localStorage.setItem(THEME_KEY, theme);
+}
+
+function applyTheme(theme) {
+  if (theme === 'dark') {
+    document.body.classList.add('dark-mode');
+    document.getElementById('themeToggleBtn').textContent = '☀️';
+  } else {
+    document.body.classList.remove('dark-mode');
+    document.getElementById('themeToggleBtn').textContent = '🌙';
+  }
+}
+
+let currentTheme = loadTheme();
+applyTheme(currentTheme);
+
+document.getElementById('themeToggleBtn').addEventListener('click', () => {
+  currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+  saveTheme(currentTheme);
+  applyTheme(currentTheme);
+});
