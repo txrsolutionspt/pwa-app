@@ -68,3 +68,40 @@ window.addEventListener('appinstalled', () => {
   console.log('App was installed');
   updateStatus('App installed successfully! 🎉');
 });
+
+// Counter functionality with localStorage persistence
+const COUNTER_KEY = 'pwa-counter';
+
+function loadCounter() {
+  const saved = localStorage.getItem(COUNTER_KEY);
+  return saved ? parseInt(saved, 10) : 0;
+}
+
+function saveCounter(value) {
+  localStorage.setItem(COUNTER_KEY, value);
+}
+
+function updateCounterDisplay(value) {
+  document.getElementById('counterDisplay').textContent = value;
+}
+
+let counter = loadCounter();
+updateCounterDisplay(counter);
+
+document.getElementById('incrementBtn').addEventListener('click', () => {
+  counter++;
+  saveCounter(counter);
+  updateCounterDisplay(counter);
+});
+
+document.getElementById('decrementBtn').addEventListener('click', () => {
+  counter--;
+  saveCounter(counter);
+  updateCounterDisplay(counter);
+});
+
+document.getElementById('resetBtn').addEventListener('click', () => {
+  counter = 0;
+  saveCounter(counter);
+  updateCounterDisplay(counter);
+});
